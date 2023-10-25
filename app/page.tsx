@@ -26,9 +26,11 @@ export default function Home() {
   const [birthdate, setBirthdate] = useState<string>('2000-01-01 00:00:00');
 
   const [isDate, setIsDate] = useState(false)
+  const [isAbleSave, setIsAbleSave] = useState(false)
 
   const handleBirthdateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const newBirthdate = event.target.value;
+    setIsAbleSave(true)
     setBirthdate(newBirthdate);
   }
 
@@ -67,7 +69,7 @@ export default function Home() {
             type="datetime-local"
             value={birthdate}
           />
-          <button className='bg-blue-500 p-2 m-2 rounded-md' onClick={saveBirthdate}>{ languageData.save }</button>
+          { isAbleSave ? <button className='bg-blue-500 p-2 m-2 rounded-md' onClick={saveBirthdate}>{ languageData.save }</button> : <button className='bg-gray-400 p-2 m-2 rounded-md' disabled onClick={saveBirthdate}>{ languageData.save }</button> }
           <div className='flex mt-4'>
             <Image src="/united-states-flag-icon.svg" className='bg-no-repeat bg-center bg-contain h-6 w-8 mr-2 cursor-pointer' onClick={() => { handleLanguageChange('en'); } } width={20} height={16} alt={''}/>
             <Image src="/brazil-flag-icon.svg" className='bg-no-repeat bg-center bg-contain h-6 w-8 cursor-pointer' onClick={() => {handleLanguageChange('pt')} } width={20} height={16} alt={''}/>
@@ -75,11 +77,11 @@ export default function Home() {
         </div>
       }
       <div className="w-screen h-screen flex items-center justify-center">
-        <div className="text-lg font-bold mb-6 w-years sm:text-3xl md:text-4xl lg:w-[510px] lg:text-6xl xl:w-[510px] xl:text-6xl">
+        <div className="font-bold mb-6 w-years sm:text-3xl md:text-4xl lg:w-[510px] lg:text-6xl xl:w-[510px] xl:text-6xl">
           {/* <div className="sm:w-[340px] md:w-[400px] lg:w-[510px] xl:w-[560px]"> */}
           {yearsLived !== null ? `${yearsLived.toFixed(10)}` : '0.0000000000'}
         </div>
-        <div className="text-lg font-bold mb-6 sm:text-3xl md:text-4xl lg:text-6xl xl:text-6xl">
+        <div className="font-bold mb-6 sm:text-3xl md:text-4xl lg:text-6xl xl:text-6xl">
           {languageData.years}
         </div>
       <div className='absolute right-0 bottom-0 p-2'>by <a className='text-blue-500 underline' href="https://github.com/gutardivo">gutardivo</a></div>
