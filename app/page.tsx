@@ -75,11 +75,11 @@ export default function Home() {
         </div>
       }
       <div className="w-screen h-screen flex items-center justify-center">
-        <div className="text-xl font-bold mb-6 w-years sm:text-3xl md:text-4xl lg:w-[510px] lg:text-6xl xl:w-[510px] xl:text-6xl">
+        <div className="text-lg font-bold mb-6 w-years sm:text-3xl md:text-4xl lg:w-[510px] lg:text-6xl xl:w-[510px] xl:text-6xl">
           {/* <div className="sm:w-[340px] md:w-[400px] lg:w-[510px] xl:w-[560px]"> */}
           {yearsLived !== null ? `${yearsLived.toFixed(10)}` : '0.0000000000'}
         </div>
-        <div className="text-xl font-bold mb-6 sm:text-3xl md:text-4xl lg:text-6xl xl:text-6xl">
+        <div className="text-lg font-bold mb-6 sm:text-3xl md:text-4xl lg:text-6xl xl:text-6xl">
           {languageData.years}
         </div>
       <div className='absolute right-0 bottom-0 p-2'>by <a className='text-blue-500 underline' href="https://github.com/gutardivo">gutardivo</a></div>
