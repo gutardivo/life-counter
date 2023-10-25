@@ -14,7 +14,7 @@ const config: Config = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       width: {
-        'years': 'calc(36vw)'
+        'years': 'calc(38vw)'
       }
     },
   },
